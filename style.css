@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #100b17;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+.sorry-animation {
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sorry-animation img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px #f18abd70);
+    animation: cuteFloat 3s ease-in-out infinite;
+}
+
+@keyframes cuteFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media(max-width: 600px) {
+    .sorry-animation {
+        width: 170px;
+        height: 170px;
+    }
+}
+.glow {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #c14d96;
+    filter: blur(160px);
+    opacity: .25;
+    top: 20%;
+    left: 30%;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 8%;
+    color: #f1b0d1;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.container {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    animation: appear 1.2s ease;
+}
+
+.top {
+    color: #e6a2c7;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.sorry-gif {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin: 20px 0;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(60px, 10vw, 95px);
+    color: #f3a8d1;
+    text-shadow: 0 0 30px #e77cb8;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.description {
+    max-width: 460px;
+    color: #c8bdce;
+    font-size: 14px;
+    line-height: 2;
+    margin: 25px auto;
+}
+
+.tamil {
+    color: #f2b5d6;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 2;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.next {
+    text-decoration: none;
+    background: linear-gradient(120deg, #df83b8, #9864bc);
+    color: white;
+    padding: 15px 32px;
+    border-radius: 40px;
+    font-size: 13px;
+    transition: .4s;
+    box-shadow: 0 0 25px #dc80b740;
+}
+
+.next:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px #e98bc7;
+}
+
+.bottom {
+    margin-top: 30px;
+    color: #83768b;
+    font-size: 10px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:600px) {
+    nav {
+        padding: 22px 5%;
+        font-size: 9px;
+    }
+
+    .sorry-gif {
+        width: 155px;
+        height: 155px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    .description, .tamil {
+        font-size: 13px;
+    }
+}

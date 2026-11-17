@@ -1,0 +1,638 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    color: #57364e;
+    background: linear-gradient(
+        135deg,
+        #ffe1ed,
+        #f6ddff,
+        #dff4ff,
+        #fff0d5
+    );
+    background-size: 400% 400%;
+    animation: backgroundMove 14s ease infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 10% 20%, #ffffff90, transparent 30%),
+        radial-gradient(circle at 90% 80%, #ffb8dc70, transparent 30%);
+}
+
+.final-page {
+    width: min(900px, 92%);
+    margin: auto;
+    padding: 65px 0 35px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.top-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #b65b91;
+    animation: fadeDown 1s ease both;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 10vw, 105px);
+    color: #8c4384;
+    margin: 18px 0 5px;
+    animation: titleAppear 1.2s ease both;
+}
+
+.main-title span {
+    color: #f06b9d;
+    text-shadow: 0 5px 25px #ff9dc777;
+}
+
+.subtitle {
+    max-width: 550px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+    color: #76536f;
+    font-size: 15px;
+}
+
+.gif-container {
+    width: min(270px, 80%);
+    margin: 20px auto 30px;
+    border-radius: 25px;
+    overflow: hidden;
+    filter: drop-shadow(0 12px 20px #c86eaa40);
+    animation: float 3s ease-in-out infinite;
+}
+
+.apology-card {
+    position: relative;
+    max-width: 680px;
+    margin: 35px auto;
+    padding: 45px 35px;
+    border: 2px solid #ffffffc9;
+    border-radius: 30px;
+    background: #ffffffb9;
+    box-shadow: 0 20px 55px #a85f9440;
+    backdrop-filter: blur(15px);
+    animation: cardAppear 1.2s ease both;
+}
+
+.card-decoration {
+    font-size: 42px;
+    margin-bottom: 12px;
+    animation: heartbeat 2s infinite;
+}
+
+.apology-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #a64e85;
+    margin-bottom: 25px;
+}
+
+.apology-card p {
+    font-size: 15px;
+    line-height: 2;
+    margin: 13px auto;
+    max-width: 550px;
+}
+
+.highlight-text {
+    color: #d64e8c;
+    font-weight: 700;
+}
+
+#revealButton {
+    margin-top: 25px;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(100deg, #ee72a6, #a66be8, #6a9ded);
+    background-size: 200%;
+    box-shadow: 0 8px 25px #d66da655;
+    transition: 0.4s;
+}
+
+#revealButton:hover {
+    transform: translateY(-5px) scale(1.04);
+    background-position: right;
+}
+
+.promise-message {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff0f6, #f2eaff);
+    animation: reveal 0.8s ease both;
+}
+
+.promise-message.show {
+    display: block;
+}
+
+.promise-heart {
+    font-size: 38px;
+}
+
+.promise-message h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #c45591;
+    margin: 10px;
+}
+
+.promise-message p {
+    line-height: 1.9;
+}
+
+.tamil-ending {
+    color: #a34b8a;
+    font-weight: 700;
+}
+
+.flower-section {
+    margin: 75px auto;
+}
+
+.flower-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 52px;
+    color: #a64e85;
+}
+
+.flower-caption {
+    margin: 10px 0 30px;
+    color: #795b7a;
+}
+
+.flower-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.flower-card {
+    position: relative;
+    height: 260px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px #9c649344;
+    transition: 0.4s;
+}
+
+.flower-card:hover {
+    transform: translateY(-10px) rotate(-2deg);
+}
+
+.flower-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.flower-card:hover img {
+    transform: scale(1.12);
+}
+
+.flower-card span {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    font-size: 28px;
+    filter: drop-shadow(0 2px 5px #0005);
+}
+
+.final-note {
+    padding: 40px 15px;
+    margin: 40px auto;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #ffffffa8, #ffe3f2c9);
+    box-shadow: 0 12px 35px #b65c9430;
+}
+
+.final-note > p:first-child {
+    font-size: 14px;
+    color: #8d6381;
+}
+
+.final-note h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 58px;
+    color: #e15c98;
+    margin: 12px;
+}
+
+.small-note {
+    font-size: 13px;
+    color: #85647c;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    color: #98558a;
+    font-weight: 700;
+}
+
+footer {
+    margin-top: 35px;
+    font-size: 12px;
+    color: #956b8d;
+    letter-spacing: 1px;
+}
+
+/* FLOATING PETALS */
+
+.petal {
+    position: fixed;
+    top: -40px;
+    z-index: 1;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes titleAppear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .final-page {
+        padding-top: 45px;
+    }
+
+    .top-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .apology-card {
+        padding: 35px 20px;
+    }
+
+    .apology-card h2 {
+        font-size: 27px;
+    }
+
+    .apology-card p {
+        font-size: 14px;
+    }
+
+    .flower-gallery {
+        grid-template-columns: 1fr;
+        width: 85%;
+        margin: auto;
+    }
+
+    .flower-card {
+        height: 240px;
+    }
+
+    .flower-section h2 {
+        font-size: 43px;
+    }
+
+    .final-note h2 {
+        font-size: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ACCEPTANCE QUESTION */
+
+.choice-section {
+    margin: 70px auto 45px;
+    padding: 45px 25px;
+    max-width: 750px;
+    border-radius: 35px;
+    background: linear-gradient(
+        135deg,
+        #fff8fc,
+        #f4eaff,
+        #e4f5ff
+    );
+    box-shadow: 0 15px 45px #a75b9630;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+.choice-sparkle {
+    font-size: 30px;
+    animation: sparkleMove 2s infinite alternate;
+}
+
+.choice-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #a64e85;
+    margin: 15px 0;
+}
+
+.choice-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #75416f;
+    font-weight: 700;
+}
+
+.choice-subtitle {
+    margin: 15px auto 25px;
+    line-height: 1.8;
+    color: #86617f;
+    max-width: 480px;
+}
+
+.button-area {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.yes-btn,
+.no-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes-btn {
+    color: white;
+    background: linear-gradient(120deg, #f36caa, #a66be8);
+    box-shadow: 0 8px 20px #e27ca955;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+}
+
+.no-btn {
+    color: #925d83;
+    background: #fff;
+    border: 2px solid #edc5df;
+    z-index: 3;
+}
+
+.answer-message,
+.celebration {
+    display: none;
+    margin-top: 35px;
+    animation: reveal 0.8s ease both;
+}
+
+.answer-message.show,
+.celebration.show {
+    display: block;
+}
+
+.answer-message {
+    padding: 25px;
+    border-radius: 25px;
+    background: #fff6e9;
+}
+
+.answer-message h3 {
+    color: #b46a6e;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.answer-message p {
+    line-height: 1.8;
+    margin: 10px;
+}
+
+.big-emoji {
+    font-size: 48px;
+}
+
+/* YES CELEBRATION */
+
+.celebration {
+    padding: 25px 10px;
+}
+
+.celebration-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.celebration-heading span {
+    font-size: 30px;
+    animation: bounce 1s infinite alternate;
+}
+
+.celebration-heading h2 {
+    font-size: 48px;
+    color: #e45b9a;
+}
+
+.happy-line {
+    margin: 10px auto 25px;
+    color: #765a8d;
+    line-height: 1.8;
+}
+
+.happy-gif {
+    max-width: 300px;
+    margin: 25px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px #b66caa40;
+}
+
+.happy-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.happy-card {
+    padding: 22px 15px;
+    border-radius: 22px;
+    background: #ffffffd9;
+    box-shadow: 0 8px 22px #9e6fa522;
+    transition: 0.3s;
+}
+
+.happy-card:hover {
+    transform: translateY(-8px);
+}
+
+.happy-card span {
+    font-size: 35px;
+}
+
+.happy-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #b65b91;
+    margin: 12px 0;
+}
+
+.happy-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #775d77;
+}
+
+.final-celebration-note {
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #ffe5f1, #eee5ff, #e2f6ff);
+}
+
+.final-celebration-note h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #d65c9b;
+}
+
+.final-celebration-note p {
+    line-height: 1.9;
+    margin: 15px auto;
+    max-width: 500px;
+}
+
+.final-celebration-note h3 {
+    color: #a05f9b;
+    margin-top: 20px;
+}
+
+.emoji-rain {
+    font-size: 25px;
+    margin-top: 25px;
+    animation: bounce 1.2s infinite alternate;
+}
+
+@keyframes sparkleMove {
+    from { transform: scale(0.9) rotate(-5deg); }
+    to { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .choice-section {
+        padding: 35px 15px;
+    }
+
+    .choice-section h2 {
+        font-size: 40px;
+    }
+
+    .choice-question {
+        font-size: 20px;
+    }
+
+    .button-area {
+        gap: 10px;
+        min-height: 100px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        padding: 13px 17px;
+        font-size: 12px;
+    }
+
+    .happy-content {
+        grid-template-columns: 1fr;
+    }
+
+    .celebration-heading h2 {
+        font-size: 36px;
+    }
+
+    .final-celebration-note h2 {
+        font-size: 35px;
+    }
+}
